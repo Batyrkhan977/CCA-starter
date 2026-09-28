@@ -1,5 +1,5 @@
 {
-  "name": "CCA Web Development",
+  "name": "CCA AI Web Development",
 
   "image": "mcr.microsoft.com/devcontainers/universal:2",
 
@@ -8,9 +8,19 @@
       "extensions": [
         "GitHub.copilot",
         "GitHub.copilot-chat"
-      ]
+      ],
+      "settings": {
+        "files.autoSave": "afterDelay"
+      }
     }
   },
 
-  "forwardPorts": [8000]
+  "forwardPorts": [8000],
+
+  "portsAttributes": {
+    "8000": {
+      "label": "My Website",
+      "onAutoForward": "openPreview"
+    }
+  }
 }
