@@ -3,35 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Someone's Cookie Clicker</title>
-
+    <meta name="theme-color" content="#8ed8ee">
+    <title>GuessWord</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="landscape" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="distant-hills"></div>
+        <div class="grass"></div>
+    </div>
 
     <main class="game">
-        <h1>🍪 Someone's Cookie Clicker</h1>
+        <header class="game-header">
+            <div class="title-mark" aria-hidden="true">✦</div>
+            <h1>GuessWord</h1>
+            <p class="subtitle">A little word game under the open sky</p>
+        </header>
 
-        <p class="subtitle">Click the cookie and collect as many cookies as you can!</p>
+        <section class="settings" aria-label="Game settings">
+            <label class="length-setting" for="wordLength">
+                Word length
+                <select id="wordLength">
+                    <option value="5">5 letters</option>
+                    <option value="6">6 letters</option>
+                    <option value="7">7 letters</option>
+                    <option value="8">8 letters</option>
+                    <option value="9">9 letters</option>
+                </select>
+            </label>
+            <label class="hard-setting" for="hardMode">
+                <input id="hardMode" type="checkbox">
+                <span class="switch" aria-hidden="true"></span>
+                <span>Hard mode <small>5 guesses</small></span>
+            </label>
+        </section>
 
-        <h2>
-            Cookies:
-            <span id="score">0</span>
-        </h2>
+        <p class="instructions">Guess the word in 6 tries. Green is the right letter in the right spot; yellow is right letter, wrong spot.</p>
 
-        <button id="cookieButton" class="cookie-button">
-            🍪
-        </button>
+        <div id="board" class="board" role="grid" aria-label="Guess board"></div>
+        <p id="guessCounter" class="guess-counter"></p>
+        <p id="message" class="message" role="status" aria-live="polite">Type a word, then press Enter.</p>
+        <div id="keyboard" class="keyboard" aria-label="On-screen keyboard"></div>
 
-        <p id="message">Start clicking!</p>
-
-        <button id="resetButton" class="reset-button">
-            Reset Game
-        </button>
+        <button id="newGameButton" class="new-game-button" type="button">New game</button>
     </main>
 
     <script src="script.js"></script>
-
 </body>
 </html>
